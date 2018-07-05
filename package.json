@@ -8,7 +8,8 @@
     "prod": "serve ./dist -s",
     "lint": "eslint src",
     "ngrok": "ngrok http -region eu 8080",
-    "test": "jest"
+    "test": "jest",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [

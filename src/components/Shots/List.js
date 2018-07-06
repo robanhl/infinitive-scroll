@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {load, isScrolling} from '../../actions'
+import { connect } from 'react-redux'
+import { load, isScrolling } from '../../actions'
+import { Flex } from 'grid-styled'
 import Item from './Item'
-import {Flex} from 'grid-styled'
 
 class List extends React.Component {
 
@@ -41,7 +41,7 @@ class List extends React.Component {
 }
 
 List.propTypes = {
-  shots: PropTypes.arrayOf(PropTypes.object),
+  shots: PropTypes.arrayOf(PropTypes.object).isRequired,
   loading: PropTypes.bool.isRequired,
   load: PropTypes.func.isRequired,
   isScrolling: PropTypes.func.isRequired,

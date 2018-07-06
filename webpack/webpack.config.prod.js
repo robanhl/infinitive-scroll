@@ -29,6 +29,15 @@ module.exports = {
         include: [resolve(__dirname, '../src')],
         use: 'babel-loader',
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
+      }
     ],
   },
   plugins: [

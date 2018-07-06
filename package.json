@@ -1,7 +1,7 @@
 {
   "name": "Infinitive-scroll",
   "version": "1.2.0",
-  "description": "Get started with ES2015, React and Redux. Including Webpack, ESLint, react-router, fetch ...",
+  "description": "Infinitive-scroll",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
     "build": "rm -rf dist && webpack --config webpack/webpack.config.prod.js  && cp -a assets/ dist/",
@@ -22,7 +22,7 @@
     "redux",
     "async"
   ],
-  "author": "Didier Franc",
+  "author": "Robert",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",

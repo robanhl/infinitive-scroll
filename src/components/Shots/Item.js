@@ -9,7 +9,7 @@ const Item = item => (
     <Box width={[1/2, 1/3]} pb={4}>
         {(item.image)
             ? <Image src={item.image} alt={item.name}/>
-            : <Image src={notFound} alt="Image not found"/>}
+            : <Image src={notFound} alt="Image not found"/>}        
     </Box>
 )
 

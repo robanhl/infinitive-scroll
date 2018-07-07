@@ -28,7 +28,6 @@ export const post = ({
   const url = `${API}/projects/?per_page=15&page=${page}&api_key=${token}`
   $.ajax({url: url, type: 'get', dataType: 'jsonp'})
     .done(response => {
-      console.log(response);
       dispatch(currentPage)
       const res = response
       const data = transformRes(res)

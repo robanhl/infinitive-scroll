@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { load, isScrolling } from '../../actions'
-import { Flex } from 'grid-styled'
+import { Flex, Box } from 'grid-styled'
+import { Loader } from '../Styled'
 import Item from './Item'
 
 class List extends React.Component {
@@ -29,19 +30,32 @@ class List extends React.Component {
     }
   }
   render() {
-    const {shots} = this.props
-    return ( 
+    const {shots, loading} = this.props
+    return (
+      <div>
         <Flex flexWrap='wrap' alignItems='center'>
           {shots.map((item, value) => {
             return <Item {...item} key={value}/>
           })}
         </Flex>
+        {(loading && shots.length > 0)
+          ? (
+            <Flex justifyContent='center' alignItems='center'>
+              <Box>
+                <Loader></Loader>
+              </Box>
+            </Flex>
+          )
+          : null}
+      </div>
     )
   }
 }
 
 List.propTypes = {
-  shots: PropTypes.arrayOf(PropTypes.object).isRequired,
+  shots: PropTypes
+    .arrayOf(PropTypes.object)
+    .isRequired,
   loading: PropTypes.bool.isRequired,
   load: PropTypes.func.isRequired,
   isScrolling: PropTypes.func.isRequired,

@@ -7,6 +7,9 @@ export const itemsAreLoading = bool => {
 export const isScrolling = bool => {
   return { type: types.IS_SCROLLING, scrolling: bool }
 }
+export const setHover = (bool, key) => {
+  return { type: types.SET_HOVER, hover:bool, key:key }
+}
 export const currentPage = number => {
   return { type: types.REQUEST_PAGE, requestPage: number }
 }

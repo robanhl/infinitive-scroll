@@ -5,8 +5,10 @@ const transformRes = (res) => {
     .projects
     .reduce((total, item) => {
       const obj = {
+        id: "id" + Math.random().toString(16).slice(2),
         name: item.name,
-        image: item.covers[230]        
+        image: item.covers[230],
+        hover: false,
       }
       total.push(obj)
       return total

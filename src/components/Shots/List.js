@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { load, isScrolling, setHover } from '../../actions'
+import { load, isScrolling } from '../../actions'
 import { Flex, Box } from 'grid-styled'
 import { Loader } from '../Styled'
 import Item from './Item'
@@ -29,14 +29,13 @@ class List extends React.Component {
       }
     }
   }
-  
   render() {
     const {shots, loading} = this.props
     return (
       <div>
         <Flex flexWrap='wrap' alignItems='center'>
-          {shots.map((item) => {
-            return <Item item={item} setHover={this.props.setHover} id={item.id} key={item.id} />            
+          {shots.map((item, value) => {
+            return <Item {...item} key={value}/>
           })}
         </Flex>
         {(loading && shots.length > 0)
@@ -61,8 +60,8 @@ List.propTypes = {
   load: PropTypes.func.isRequired,
   isScrolling: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
-  scrolling: PropTypes.bool.isRequired,
+  scrolling: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({shots: state.shots, loading: state.itemsIsLoading, currentPage: state.requestPage, scrolling: state.scrolling})
-export default connect(mapStateToProps, {load, isScrolling, setHover})(List)
+export default connect(mapStateToProps, {load, isScrolling})(List)

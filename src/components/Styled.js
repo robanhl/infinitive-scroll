@@ -61,9 +61,6 @@ export const Overlay = styled.div `
 &:hover{
   opacity:1;
 }
-@media (max-width: 425px) {
-  opacity:1;
-  }
 `
 export const Text = styled.div`
   margin-top: 50px;

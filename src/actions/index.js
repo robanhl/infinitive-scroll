@@ -11,7 +11,6 @@ export const currentPage = number => {
   return { type: types.REQUEST_PAGE, requestPage: number }
 }
 export const addFavourite = data => {
-  console.log(data);
   return { type: types.ADD_FAVOURITE, favourite: data }
 }
 export const load = page => dispatch => {

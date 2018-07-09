@@ -33,7 +33,7 @@ class List extends React.Component {
     const {shots, loading, addFavourite} = this.props
     return (
       <div>
-        <Flex flexWrap='wrap' alignItems='center'>
+        <Flex flexWrap='wrap' alignItems='center' pt={4}>
           {shots.map((item, value) => {
             return <Item item={item} addFavourite={addFavourite} key={value}/>
           })}

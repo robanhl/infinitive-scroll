@@ -90,6 +90,10 @@ export const ButtonFavorite = styled.div `
   margin-left: 40px;
   margin-right: 40px;
   }
+  &:hover{
+    background: white;
+    color: black;
+  }
 `
 const spin = keyframes`
 0% {

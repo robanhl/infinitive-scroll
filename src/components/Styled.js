@@ -10,6 +10,7 @@ export const Body = styled.div `
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   display: flex;
   min-height: 100vh;
+  font-family: sans-serif;
 `
 export const Container = styled.div `
   margin: 20px 140px 20px 140px;
@@ -41,85 +42,57 @@ export const Image = styled('img')`
   }
 `
 
-export const Title = styled.h1 `
-  font-family: sans-serif;
-  font-weight: 100;
-  margin: 30px 30px 20px 30px;
+export const ContainerItem = styled.div `
+  display: inline-flex;
+  position: relative;
 `
 
-const Github = styled.span `
-  vertical-align: middle;
-  padding: 6px 10px;
-  border: 1px solid rgb(213, 213, 213);
-  font-size: 14px;
-  font-weight: 400;
-  outline: none;
-  font-family: sans-serif;
-`
-
-export const GithubButton = styled(Github)`
-  border-radius: 3px 0 0 3px;
-  background: rgb(248, 248, 248);
-  &:hover {
-    background: rgb(238, 238, 238);
+export const Overlay = styled.div `
+  display:inline-flex;
+  position:absolute;
+  width:100%;
+  flex-direction: column;
+  transition: all 0.8s ease;
+  background: rgba(0, 0, 0, 0.6);
+  opacity:0;
+  color:white;
+  width: 100%;
+  height: 100%;
+&:hover{
+  opacity:1;
+}
+@media (max-width: 425px) {
+  opacity:1;
   }
 `
-
-export const GithubCount = styled(Github)`
-  margin-left: -1px;
-  border-radius: 0 3px 3px 0;
-  width: 100px;
+export const Text = styled.div`
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  @media (max-width: 425px) {
+    font-size: 12px;
+    margin-top: 30px;
+    }
+`
+export const Hr = styled.hr`
+    width: 100px;
+    margin-top: 10px;
 `
 
-export const GithubLink = styled.a `
-  display: block;
-  text-decoration: none;
-  color: black;
-`
-
-export const Message = styled.h2 `
-  font-family: sans-serif;
-  font-weight: 100;
-  margin-top: 30vh;
-`
-
-export const Blue = styled.span `color: rgb(0, 128, 255);`
-
-export const FormTitle = styled.h1 `
-  font-family: sans-serif;
-  font-weight: 100;
-  margin-top: 22vh;
-  margin-bottom: 50px;
-  @media (max-width: 500px) {
-    margin-top: 15vh;
-  }
-`
-
-export const TextField = styled.input `
-  display: block;
-  height: 42px;
-  width: 300px;
-  margin: 10px auto;
-  padding: 0 12px;
-  border-radius: 3px;
-  border: 1px solid lightgrey;
-  outline: none;
-  font-size: 17px;
-  box-sizing: border-box;
-  appearance: none;
-  &:focus {
-    border-color: rgb(0, 128, 255);
-  }
-`
-
-export const Submit = styled.input `
-  border: none;
-  color: rgb(0, 128, 255);
-  font-size: 24px;
-  background: none;
-  outline: none;
+export const ButtonFavorite = styled.div `
   cursor: pointer;
-  margin-top: 30px;
+  border-radius: 50px;
+  border: 1px solid white;
+  margin-top: 10px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding: 5px;
+@media (max-width: 425px) {
+  font-size: 12px;
+  margin-left: 40px;
+  margin-right: 40px;
+  }
 `
 const spin = keyframes`
 0% {

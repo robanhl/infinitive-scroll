@@ -12,19 +12,19 @@ import {
     Hr
 } from '../Styled'
 
-const Item = item => (
+const Item = ({item, addFavourite}) => (
     <Box width={[
         1 / 2,
         1 / 3
     ]} pb={4}>
         <ContainerItem>
             {(item.image)
-                ? <Image src={item.image} alt={item.name}/>
+                ? <Image src={item.image} alt={item.name} />
                 : <Image src={notFound} alt="Image not found"/>}
             <Overlay>
                 <Text>{item.name}</Text>
                 <Hr></Hr>
-                <ButtonFavorite onClick={() => alert('Will add via Redux action')}>Favourite</ButtonFavorite>
+                <ButtonFavorite onClick={() => addFavourite(item.name)}>Favourite</ButtonFavorite>
             </Overlay>
         </ContainerItem>
     </Box>

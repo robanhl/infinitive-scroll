@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { load, isScrolling } from '../../actions'
+import { load, isScrolling, addFavourite } from '../../actions'
 import { Flex, Box } from 'grid-styled'
 import { Loader } from '../Styled'
 import Item from './Item'
@@ -30,12 +30,12 @@ class List extends React.Component {
     }
   }
   render() {
-    const {shots, loading} = this.props
+    const {shots, loading, addFavourite} = this.props
     return (
       <div>
         <Flex flexWrap='wrap' alignItems='center'>
           {shots.map((item, value) => {
-            return <Item {...item} key={value}/>
+            return <Item item={item} addFavourite={addFavourite} key={value}/>
           })}
         </Flex>
         {(loading && shots.length > 0)
@@ -60,8 +60,9 @@ List.propTypes = {
   load: PropTypes.func.isRequired,
   isScrolling: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
-  scrolling: PropTypes.bool.isRequired
+  scrolling: PropTypes.bool.isRequired,
+  addFavourite: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({shots: state.shots, loading: state.itemsIsLoading, currentPage: state.requestPage, scrolling: state.scrolling})
-export default connect(mapStateToProps, {load, isScrolling})(List)
+export default connect(mapStateToProps, {load, isScrolling, addFavourite})(List)

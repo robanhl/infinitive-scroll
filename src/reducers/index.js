@@ -1,17 +1,17 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
 
-import shots from './shots'
-import itemsIsLoading from './loading'
-import requestPage from './requestPage'
-import scrolling from './scrolling'
-import favourite from './favourite'
+import shots from "./shots";
+import itemsIsLoading from "./loading";
+import requestPage from "./requestPage";
+import scrolling from "./scrolling";
+import favourite from "./favourite";
 
 const rootReducer = combineReducers({
   shots,
   itemsIsLoading,
   requestPage,
   scrolling,
-  favourite,
-})
+  favourite
+});
 
-export default rootReducer
+export default rootReducer;

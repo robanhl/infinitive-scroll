@@ -1,12 +1,12 @@
-import {actionTypes as types} from '../constants'
+import { actionTypes as types } from "../constants";
 
 const itemsIsLoading = (state = false, action) => {
   switch (action.type) {
     case types.LOADING:
-      return action.isLoading
+      return action.isLoading;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default itemsIsLoading
+export default itemsIsLoading;

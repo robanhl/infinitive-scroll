@@ -1,1 +1,1 @@
-export * as actionTypes from './actionTypes'
+export * as actionTypes from "./actionTypes";

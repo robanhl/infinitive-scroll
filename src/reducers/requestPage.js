@@ -1,12 +1,12 @@
-import { actionTypes as types } from '../constants'
+import { actionTypes as types } from "../constants";
 
 const requestPage = (state = 1, action) => {
   switch (action.type) {
     case types.REQUEST_PAGE:
-      return action.requestPage
+      return action.requestPage;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default requestPage
+export default requestPage;

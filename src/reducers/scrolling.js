@@ -1,12 +1,12 @@
-import { actionTypes as types } from '../constants'
+import { actionTypes as types } from "../constants";
 
 const scrolling = (state = true, action) => {
   switch (action.type) {
     case types.IS_SCROLLING:
-      return action.scrolling
+      return action.scrolling;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default scrolling
+export default scrolling;

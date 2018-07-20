@@ -1,5 +1,5 @@
 import { actionTypes as types } from '../constants'
-import { post } from '../helpers'
+import { fetchItems } from '../helpers'
 
 export const itemsAreLoading = bool => {
   return { type: types.LOADING, isLoading: bool }
@@ -16,7 +16,7 @@ export const addFavourite = data => {
 export const load = page => dispatch => {
   dispatch({ type: types.REQUEST })
   dispatch(itemsAreLoading(true))
-  post({
+  fetchItems({
     page: page,
     currentPage: currentPage(page),
     notLoading: itemsAreLoading(false),

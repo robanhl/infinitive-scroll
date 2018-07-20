@@ -6,29 +6,25 @@ import { Flex, Box } from 'grid-styled'
 import { Loader } from '../Styled'
 import Item from './Item'
 
-class List extends React.Component {
-
-  componentWillMount() {
+class List extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    window.onscroll = () => {
+      const {currentPage} = this.props
+      if (
+        window.innerHeight + document.documentElement.scrollTop
+        === document.documentElement.offsetHeight
+      ) {
+        this.props.load(currentPage + 1)
+      }
+    };
+  }
+  componentDidMount() {
     this
       .props
       .load(this.props.currentPage)
-    this.scrollListener = window.addEventListener('scroll', e => {
-      this.handleScroll(e)
-    })
   }
-  handleScroll() {
-    const {scrolling, load, currentPage, isScrolling} = this.props
-    if (scrolling) {
-      const lastLi = document.querySelector('div > div:last-child')
-      const lastLiOffset = lastLi.offsetTop + lastLi.clientHeight
-      const pageOffset = window.pageYOffset + window.innerHeight
-      const bottomOffset = 20
-      if (pageOffset > lastLiOffset - bottomOffset) {
-        load(currentPage + 1)
-        isScrolling(false)
-      }
-    }
-  }
+
   render() {
     const {shots, loading, addFavourite} = this.props
     return (

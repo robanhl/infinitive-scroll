@@ -14,7 +14,7 @@ const transformRes = (res) => {
   return transformedData;
 }
 
-export const post = ({
+export const fetchItems = ({
   page,
   success,
   failure,
